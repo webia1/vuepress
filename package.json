@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "start": "nodemon --exec 'vuepress dev' ./docs",
+    "build": "vuepress build docs"
+  }
+}
