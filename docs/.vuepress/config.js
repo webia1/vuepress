@@ -13,6 +13,7 @@ module.exports = {
     config: md => {
       md.use(require('markdown-it-footnote'));
       md.use(require('markdown-it-imsize'));
+      md.use(require('markdown-it-smartarrows'));
     }
   }
 }
