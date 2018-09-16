@@ -1,17 +1,37 @@
 # VuePress
 
+[[toc]]
+
+## Import Code Snippets
+
+`<<< @/docs/code/js/Array.prototype.filter.js`
+
+### Highlighting a certain line
+
+`<<< @/docs/code/js/Array.prototype.filter.js{2}`
+
+### Highlighting several lines
+
+`<<< @/docs/code/js/Array.prototype.filter.js{2,5,7-9}`
+
 ## Using Assets within Vuepress
 
 ### Configure Alias
 
+`docs/config.js`
+
 ```js
-configureWebpack: {
-    resolve: {
-      alias: {
-        '@assets': '/fromRoot/to/vuepress/docs/assets'
+module.exports = {
+  ...,
+  configureWebpack: {
+      resolve: {
+        alias: {
+          '@assets': '/fromRoot/to/vuepress/docs/assets'
+        }
       }
-    }
-  },
+    },
+  ...
+}
 ```
 
 ### Link to this alias
