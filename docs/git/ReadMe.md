@@ -3,8 +3,8 @@
 ## First Steps
 
 ```shell
-git config --global user.name Max Mustermann
-git config --global user.email "max.mustermann@example.com"
+git config --global user.name We Bia
+git config --global user.email "we.bia@gmail.com"
 ```
 
 ## `.gitignore`
