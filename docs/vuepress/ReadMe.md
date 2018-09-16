@@ -14,7 +14,7 @@
 
 `<<< @/docs/code/js/Array.prototype.filter.js{2,5,7-9}`
 
-## Using Assets within Vuepress
+## Using `/docs/assets`
 
 ### Configure Alias
 

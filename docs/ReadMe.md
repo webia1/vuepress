@@ -11,4 +11,12 @@ lang: en-US
 
 ![Accessibility](assets/images/accessibility/ux-a11y-rules.jpg)
 
-## Code
+## Miscellaneous
+
+```json
+{
+  "json": {
+    "key": "value"
+  }
+}
+```
