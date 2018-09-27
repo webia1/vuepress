@@ -19,13 +19,6 @@ module.exports = {
         ]
       },
       {
-        title: 'JS & TS',
-        collapsable: true,
-        children: [
-          '/js/'
-        ]
-      },
-      {
         title: 'Git',
         collapsable: true,
         children: [
