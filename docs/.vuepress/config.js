@@ -26,6 +26,13 @@ module.exports = {
         ]
       },
       {
+        title: 'Vue',
+        collapsable: true,
+        children: [
+          '/vue/'
+        ]
+      },
+      {
         title: 'Vuepress',
         collapsable: true,
         children: [
