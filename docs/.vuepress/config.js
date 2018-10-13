@@ -19,17 +19,17 @@ module.exports = {
         ]
       },
       {
-        title: 'JS & TS',
-        collapsable: true,
-        children: [
-          '/js/'
-        ]
-      },
-      {
         title: 'Git',
         collapsable: true,
         children: [
           '/git/'
+        ]
+      },
+      {
+        title: 'Vue',
+        collapsable: true,
+        children: [
+          '/vue/'
         ]
       },
       {
