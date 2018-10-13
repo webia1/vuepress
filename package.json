@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "nodemon --exec 'vuepress dev' ./docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "markdown-it-footnote": "^3.0.1",

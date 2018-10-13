@@ -19,6 +19,13 @@ module.exports = {
         ]
       },
       {
+        title: 'Architecture Principles',
+        collapsable: true,
+        children: [
+          '/architecture/'
+        ]
+      },
+      {
         title: 'Git',
         collapsable: true,
         children: [

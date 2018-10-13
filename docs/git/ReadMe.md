@@ -23,67 +23,46 @@ generated/
 !someException.backup
 ```
 
-## Add/Commit related
+## Alias
 
-### Correct Last Commit Message
+Example: Setting `git today`
 
 ```shell
-git commit --amend
+git config --global alias.today \
+  'log --since=7am --oneline'
 ```
 
-### Removing ignored files from remote repository
+## Configuration Paths
+
+### All Config Files
 
 ```shell
-git rm -r --cached .
-git add .
-git commit -am "Removed ignored files"
-git push
+git config --list --show-origin
 ```
 
-### Undo / Reset
-
-#### Back to last commit
+### System Config Files
 
 ```shell
-git reset --hard
+git config --list --system --show-origin
 ```
 
-#### Change to a certain commit
+### Show Local Config
 
 ```shell
-git reset --hard  commithash
+git config --list --local
 ```
 
-#### Drop Local Changes and Change to a Branch
+### Show Locations
 
 ```shell
-git checkout --force someBranch
-```
-
-#### Undo Add
-
-```shell
-git rm --cached .     // undo add
-```
-
-## Blame
-
-`git blame` shows what revision and author
-last modified each line of a file
-
-```shell
-git blame folder/filename.extension
+git config --list --show-origin |
+  awk '{print $1}' |
+    uniq
 ```
 
 ## Branch
 
-### Create Branch from Commit-Hash
-
-```shell
-git branch desiredBranchName commithash
-```
-
-### Show Branch Name
+### Show Name
 
 ```shell
 git status
@@ -98,89 +77,6 @@ basename $(git symbolic-ref HEAD)
 git branch | awk '/^\*/{print $2}'
 git symbolic-ref HEAD | cut -d/ -f3-
 git rev-parse --symbolic-full-name --abbrev-ref @{u}
-```
-
-### Rename Local Branch
-
-```shell
-git branch -m newName // on current branch
-git branch -m oldName newName
-```
-
-### Delete Local Branch
-
-```shell
-git branch -D branchName
-git branch -d branchName
-```
-
-### Delete Remote Branch
-
-```shell
-git push origin --delete branchName
-git push origin :branchName
-```
-
-## Configuration Related
-
-### Alias
-
-Example: Setting `git today`
-
-```shell
-git config --global alias.today \
-  'log --since=7am --oneline'
-```
-
-Or short status message
-
-```shell
-git config --global alias.s 'status --short'
-```
-
-### Set autocrlf to false
-
-```shell
-git config --global core.autocrlf false
-```
-
-### Show all config files
-
-```shell
-git config --list --show-origin
-```
-
-### Show system config files
-
-```shell
-git config --list --system --show-origin
-```
-
-### Show local config
-
-```shell
-git config --list --local
-```
-
-### Show Config Locations
-
-```shell
-git config --list --show-origin |
-  awk '{print $1}' |
-    uniq
-```
-
-### Store Git Credentials on Mac
-
-```shell
-git config --global credential.helper cache
-git config --global credential.helper 'cache --timeout=3600'
-```
-
-### Set MacOs KeyChain as Git credential store
-
-```shell
-git config --global credential.helper osxkeychain
 ```
 
 ## Diff
@@ -215,15 +111,21 @@ git diff master --stat
 git diff master --shortstat
 ```
 
+## Update Index
+
+```shell
+git update-index --assume-unchanged
+```
+
 ## Log
 
-### Show Commit Hashes and Titles
+### Log Commit Hashes and Titles
 
 ```shell
 git log --pretty="%h %s"
 ```
 
-### Show all changes made by a certain user
+### Log all changes made by a certain user
 
 #### Short Version
 
@@ -243,124 +145,4 @@ git log --pretty="%H" --author="authorname" |
         git show --oneline --name-only $commit_hash |
           tail -n+2
     done | sort | uniq
-```
-
-### Show Top List of Committers
-
-```shell
-git shortlog -sn // top list
-git shortlog -sne // with Email Addresses
-git shortlog -sn --no-merges  // top list ohne merges
-```
-
-### Miscellaneous
-
-```shell
-git log --oneline
-git log --graph
-git log --graph --oneline --decorate
-git log --summary -M90% | grep -e "^ rename"
-git log --follow a-modified-file.txt
-git config diff.renames true  // Rename Detection = true
-```
-
-## Merge
-
-### List of Merge Tools
-
-```shell
-git mergetool --tool-help   // list of merge tools
-```
-
-### Abort if Conflicts (1)
-
-```shell
-git merge --no-commit branch2
-git merge --abort
-```
-
-### Abort if Conflicts (2)
-
-```shell
-git format-patch \
-  $(git merge-base branch1 branch2)..branch2 --stdout |
-    git apply --check -
-```
-
-### Cancel/Reset Merge
-
-```shell
-git reset --merge
-```
-
-### Merge: Overwrite
-
-```shell
-git merge -X theirs source_branch_name
-```
-
-### Merge without checkout
-
-```shell
-git fetch . dev:master // from dev -> into -> master
-```
-
-### Log Merges
-
-```shell
-git log --merges
-```
-
-## Remote Repository
-
-### Add & Connect
-
-```shell
-git remote add origin <https://to-remote/repo.git>
-git branch --set-upstream-to=origin/master master
-```
-
-### Set Upstream & Push
-
-```shell
-git push --set-upstream origin desired_branch_name
-git push -u origin desired_branch_name
-```
-
-### Fatal: refusing to merge unrelated histories
-
-```shell
-git pull origin master --allow-unrelated-histories
-```
-
-## Stash
-
-```shell
-git stash
-git stash --include-untracked
-git stash pop
-git stash list
-git stash pop stash@{1}
-```
-
-## Tag
-
-```shell
-git tag -a v0.1.0 -m "My Message"
-git push origin v0.1.0
-git push --tags // or push all tags
-```
-
-## Miscellaneous
-
-### Check Integrity
-
-```shell
-git fsck
-```
-
-### Update Index
-
-```shell
-git update-index --assume-unchanged
 ```
