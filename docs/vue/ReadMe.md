@@ -12,6 +12,8 @@ Vuetify UI Library in form of a plugin (for example).
 ```shell
 npm install -g @vue/cli
 vue create vue-app
+cd vue-app
+vue add vuetify
 ```
 
 The usage of `vue command`:
