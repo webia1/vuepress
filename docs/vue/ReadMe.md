@@ -1,4 +1,4 @@
-# Vue
+# Vue Basics
 
 [[toc]]
 

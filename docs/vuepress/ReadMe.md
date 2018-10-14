@@ -1,4 +1,4 @@
-# VuePress
+# VuePress Recipes
 
 [[toc]]
 
