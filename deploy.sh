@@ -22,3 +22,4 @@ git remote add origin https://github.com/webia1/webia1.github.io.git
 git push -u origin master -f
 
 cd -
+rm -rf docs/.vuepress/dist
