@@ -66,6 +66,27 @@ git checkout --force someBranch
 git rm --cached .     // undo add
 ```
 
+## Bisect
+
+`git bisect` uses a binary search
+algorithm to find which commit in your project's history
+introduced a bug. You use it by first telling it a "bad"
+commit that is known to contain the bug, and a "good"
+commit that is known to be before the bug was
+introduced. Then git bisect picks a commit between those
+two endpoints and asks you whether the selected commit
+is "good" or "bad". It continues narrowing down the
+range until it finds the exact commit that introduced
+the change.
+
+```shell
+git bisect start
+git bisect bad
+git bisect good #commithash
+```
+
+The following is interactive.
+
 ## Blame
 
 `git blame` shows what revision and author
