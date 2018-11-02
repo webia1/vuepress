@@ -1,4 +1,4 @@
-# Using Environment Variables with NodeJS
+# Using Environment Variables
 
 # Within Scripts and Shell Commands
 
