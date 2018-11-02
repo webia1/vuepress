@@ -40,6 +40,13 @@ module.exports = {
         ]
       },
       {
+        title: 'Vue CLI (@vue/cli)',
+        collapsable: true,
+        children: [
+          '/vue-cli/'
+        ]
+      },
+      {
         title: 'Vuepress',
         collapsable: true,
         children: [
