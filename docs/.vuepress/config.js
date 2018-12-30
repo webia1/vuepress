@@ -26,6 +26,20 @@ module.exports = {
         ]
       },
       {
+        title: 'Angular',
+        collapsable: true,
+        children: [
+          '/angular/'
+        ]
+      },
+      {
+        title: 'Angular CLI (@angular/cli)',
+        collapsable: true,
+        children: [
+          '/angular-cli/'
+        ]
+      },
+      {
         title: 'Git',
         collapsable: true,
         children: [
